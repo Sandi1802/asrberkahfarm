@@ -47,6 +47,22 @@
     border-radius: 8px;
     margin-bottom: 2rem;
 }
+
+@media(max-width: 768px) {
+    .article-content {
+        padding: 1.5rem;
+        margin: -2rem 16px 3rem 16px;
+    }
+    .article-title {
+        font-size: 1.8rem;
+    }
+    .article-banner {
+        padding: 4rem 16px 3rem 16px;
+    }
+    .article-body {
+        font-size: 1rem;
+    }
+}
 </style>
 
 <div>
@@ -58,7 +74,7 @@
     </div>
 
     <div class="container">
-        <div class="article-content animate-fade-up delay-1">
+        <div class="article-content">
             <h2 class="article-title">{{ $post->title }}</h2>
             <div class="article-meta">
                 Ditulis pada {{ \Carbon\Carbon::parse($post->created_at)->format('d F Y') }}
