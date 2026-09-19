@@ -86,7 +86,7 @@
                     <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; z-index: 2; color: white;">
                         <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: bold; color: white;">{{ $post->title }}</h3>
                         <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 1rem;">{{ \Carbon\Carbon::parse($post->created_at)->format('d/m/Y') }} · ASR Farm</p>
-                        <p style="color: #eee; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">{{ \Illuminate\Support\Str::limit($post->content, 120) }}</p>
+                        <p style="color: #eee; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">{{ \Illuminate\Support\Str::limit(strip_tags($post->content), 120) }}</p>
                         <a href="/blog/{{ $post->id }}" style="color: white; font-weight: 600; text-decoration: none; font-size: 0.9rem;">Read More »</a>
                     </div>
                 </div>
